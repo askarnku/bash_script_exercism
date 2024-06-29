@@ -10,6 +10,7 @@ fi
 msg=(" wink "" double wink "" close your eyes "" jump ")
 
 #decimal to binary
+declare res=()
 binary=""
 
 to_binary() {
@@ -37,7 +38,9 @@ for (( i=${#binary}; i>=0; i-- )); do
     if [[ is_pres  ]]
 done
 
+=======
+# len=
 
+# for (i=)
 
-
-
+to_binary "$@"
