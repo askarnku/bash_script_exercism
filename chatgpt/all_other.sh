@@ -44,5 +44,14 @@ compare_str() {
         fi
 }
 
-compare_str $@
+seperate_string_by_delim() {
+    original="$1"
+    IFS=','
+    parts=($original)
+    for single in "${parts[@]}"; do
+        echo $single
+    done
+}
+
+seperate_string_by_delim $@
 
