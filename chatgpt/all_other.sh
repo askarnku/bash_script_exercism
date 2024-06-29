@@ -22,20 +22,19 @@ compare_str() {
         str2="$2"
 
         if [[ "${#str1}" -ne "${#str1}" ]]; then
-                echo "They are not equal"
-                exit 1
+            echo "They are not equal"
+            exit 1
         fi
         
         len="${#str1}"
         count=0
         for (( i=0; i<len; i++ )); do
-		local char1="${str1:i:1}"
-		local char2="${str2:i:1}"
-		echo "$char1"
-		echo "$char2"
-                if [ "$char1" != "$char2" ]; then
-                        ((count++))
-                fi
+            local char1="${str1:i:1}"
+            local char2="${str2:i:1}"
+            echo "${char1} vs ${char2}"
+            if [ "$char1" != "$char2" ]; then
+                    ((count++))
+            fi
         done
         
         if [ "$count" -ne 0 ]; then
@@ -45,5 +44,5 @@ compare_str() {
         fi
 }
 
-compare_str
+compare_str $@
 
